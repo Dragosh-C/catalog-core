@@ -24,17 +24,6 @@ make distclean
 This will configure, build and run the `main.wasm` file via Wamr.
 You can see how to test it in the [running section](#run).
 
-The same can be done for `AArch64`, by running the commands below:
-
-```console
-./setup.sh
-make distclean
-./scripts/build/qemu.arm64
-./scripts/run/qemu.arm64
-```
-
-Similar to the `x86_64` build, this will start the `main.wasm` file via Wamr.
-Information about every step is detailed below.
 
 ### Requirements
 
@@ -259,27 +248,6 @@ sudo qemu-system-aarch64 \
     -initrd "$PWD/rootfs.cpio"
 
 ```
-
-### Build and Run on Xen/x86_64
-
-```console
-./scripts/build/xen.x86_64
-sudo xl create -c scripts/run/xen.x86_64.cfg
-```
-
-You need use `sudo` or the `root` account to run Xen.
-
-### Build and Run on Xen/ARM64
-
-```console
-
-./scripts/build/xen.arm64
-sudo xl create -c scripts/run/xen.arm64.cfg
-```
-
-You need use `sudo` or the `root` account to run Xen.
-
-
 
 
 ### Build and Run with Firecracker
